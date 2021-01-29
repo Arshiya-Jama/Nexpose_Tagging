@@ -1,0 +1,5 @@
+AJ01-SS Angelina
+SEK01-SS Sean
+SM01-SS Sid
+DB_Oracle Database
+WIN Windows
