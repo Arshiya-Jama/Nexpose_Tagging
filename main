@@ -13,7 +13,7 @@ for line in f:
 		verify = False, 
 		auth = ('username', 'Password'), #replace with credentials to log into the application
 		headers={
-			'Authorization': 'Basic QXJqYW1hOlNldGhpQDEyMw==',
+			'Authorization': '<Enter your hash>',
 			'Content-type':'application/json'
 		},
 		data = json.dumps({
