@@ -1,0 +1,47 @@
+import requests
+import json
+import os
+
+fileName = "Nexpose-tags.txt" # Your text file name
+userID = <Enter Nexpose username here>
+passwd = <Enter Nexpose password here>
+authHash = <Hash of your user credentials here>
+consoleAdd = <console address in format IP_Address:port>
+url = consoleAdd + "/api/3/tags"
+
+f = open (fileName, "r")
+for line in f:
+	fields = line.split(" ", 1)
+	asset_name = fields[0]
+	tag_name = fields[1]
+	print("Adding" + " " + asset_name + " for " + tag_name)
+	response = requests.post(
+		url, 
+		verify = False, 
+		auth = (userID, passwd), 
+		headers={
+			'Authorization': authHash,
+			'Content-type':'application/json'
+		},
+		data = json.dumps({
+			"color": "default",
+			"created": "2021-01-28T23:50:01.205Z",
+			"links": [{
+				"href": url,
+				"rel": "self"
+			}],
+			"name": tag_name,
+			"riskModifier": 1,
+			"searchCriteria": { 
+				"filters": [{
+					"field": "ip-address", # If your text file has hostnames, change ip-address to host-name
+					"operator": "contains",
+					"value": asset_name
+				}],
+				"match": "all"
+			},
+			"type": "owner" # Can change to: location or custom
+		})
+	)
+	print(response.json())
+f.close()
