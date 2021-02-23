@@ -13,6 +13,7 @@ Prerequisite:
 
 Installation:
 Download this code and run in python after changing the required information. 
+I have also added a sample text file with IP addresses and tag names in the required format.
 
 I have used the API docuemntation from Rapid7 to build it and check for search criteria etc. If you want to change these, please refer to: https://help.rapid7.com/insightvm/en-us/api/index.html
 
