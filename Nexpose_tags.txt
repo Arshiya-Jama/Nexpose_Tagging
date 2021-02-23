@@ -1,5 +1,5 @@
-AJ01-SS Angelina
-SEK01-SS Sean
-SM01-SS Sid
-DB_Oracle Database
-WIN Windows
+10.0.0.1 Angelina
+10.0.0.2 Sean
+10.0.0.3 Sid
+10.0.0.4 Database
+10.0.0.5 Windows
